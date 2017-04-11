@@ -1,0 +1,11 @@
+<h2><%=@figure.titles.collect{|title| title.name}.join(" ")%> <%=@figure.name%></h2>
+<h3>Landmarks:</h3>
+<ol>
+  <% @figure.landmarks.each do |landmark| %>
+    <li><a href="/landmarks/<%=landmark.id%>"><%=landmark.name%> - <%=landmark.year_completed%></a></li>
+  <% end %>
+</ol>
+<br>
+<form action="/figures/<%=@figure.id%>/edit" method="get">
+  <input type="submit" value="Edit">
+</form>
